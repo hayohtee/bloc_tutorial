@@ -1,3 +1,3 @@
 # bloc_tutorial
 
-A new Flutter project.
+A demo flutter project for learning BLOC state management
