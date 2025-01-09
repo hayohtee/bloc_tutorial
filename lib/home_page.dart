@@ -30,11 +30,23 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          BlocProvider.of<CounterBloc>(context).add(CounterIncremented());
-        },
-        child: Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              BlocProvider.of<CounterBloc>(context).add(CounterIncremented());
+            },
+            child: Icon(Icons.add),
+          ),
+          SizedBox(height: 16),
+          FloatingActionButton(
+            onPressed: () {
+              BlocProvider.of<CounterBloc>(context).add(CounterDecremented());
+            },
+            child: Icon(Icons.remove),
+          ),
+        ],
       ),
     );
   }
