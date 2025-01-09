@@ -5,6 +5,13 @@ class CounterBloc extends Bloc<CounterEvent, int> {
     on<CounterIncremented>((event, emit) {
       emit(state + 1);
     });
+
+    on<CounterDecremented>((event, emit) {
+      if (state <= 0) {
+        return;
+      }
+      emit(state - 1);
+    });
   }
 }
 
